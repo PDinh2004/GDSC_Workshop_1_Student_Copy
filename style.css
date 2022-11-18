@@ -1,0 +1,61 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+/*
+"#game" sets the boundaries of our game
+*/
+
+#game{
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+/*
+"#character" creates the character (red block) to a particular size and color
+*/
+
+#character{
+  width: 50px;
+  height: 50px;
+  /* Below, the dinosaur image is given to character */
+  background-image: url("./dino-run-0.png");
+  background-size: cover;
+  position: relative;
+  top: 150px;
+}
+.animate{
+  animation: jump 500ms;
+}
+@keyframes jump{
+  0%{top: 150px;}
+  30%{top: 100px;}
+  70%{top: 100px;}
+  100%{top: 150px;}
+}
+
+/*
+"#block" creates the block (blue block) to a particular size and color
+
+"@keyframes" and "animation" work together to create the movement of the block
+*/
+#block{
+  width: 20px;
+  height: 40px;
+  background-image: url("cactus.png");
+  background-size: cover;
+  position: relative;
+  top: 110px;
+  left: 480px;
+  animation: block 1s infinite linear;
+}
+
+@keyframes block{
+  0%{left: 480px;}
+  100%{left: -40px;}
+}
+p{
+  font-family: Arial;
+}
