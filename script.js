@@ -1,5 +1,5 @@
-var character = document.getElementById("character");
-var block = document.getElementById("block");
+var dino = document.getElementById("dino");
+var cactus = document.getElementById("cactus");
 var counter = 0;
 var isDead = false;
 
@@ -8,11 +8,11 @@ function jump() {
   if (isDead) {
     return;
   }
-  if (character.classList != "animate") { //If the character is not jumping, give it the jumping animation
-    character.classList.add("animate");
+  if (dino.classList != "animate") { //If the character is not jumping, give it the jumping animation
+    dino.classList.add("animate");
   }
   setTimeout(function() { //Set a delay equal to the animation time so the character jumps are consistent 
-    character.classList.remove("animate");
+    dino.classList.remove("animate");
   }, 500);
 }
 
@@ -20,22 +20,39 @@ var checkDead = setInterval(function() {
   if (isDead) {
     return;
   }
-  var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-  //The use of parseInt gets rid of the "px" that would have been there
-  var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-  if (blockLeft < 20 && blockLeft > 0 && characterTop >= 130) {
-    block.style.animation = "none";
-    block.style.display = "none";
-    isDead = true;
-    character.style.backgroundImage = "url('./dino-lose.png')"
-    alert("You lose!");
+  var dinoTop = parseInt(window.getComputedStyle(dino).getPropertyValue("top"));
+  // The use of parseInt gets rid of the "px" that would have been there
+  var cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
+
+  if (cactusLeft < 100 && cactusLeft > 0 && dinoTop >= 50) {
+    /*
+    Below, insert all the functionality described within the slides.
+
+    If confused on how to access CSS attributes, look at which id's need to be changed and the specified attributes. How to 'remove' attributes: use 'none' as the value.
+    
+    Ex: 
+    id: dino
+    Accessing CSS: style
+    CSS Attribute: backgroundImage
+    dino.style.backgroundImage = "url('[insert image]')"
+
+  Using 'alert("[string of your choice]")' will send a prompt that the user must click on in order to access the page functions.
+
+    ~Code below~
+    */
+
+    
+    
   } else {
-    counter++;
+    // Increment score below since the dinosaur and cactus have not collided (game has not ended)
+
+    
+    
     if (counter % 2 == 0) {
-      character.style.backgroundImage = "url('./dino-run-0.png')"
+      //dino.style.backgroundImage = "url('[insert image]')"
     } else {
-      character.style.backgroundImage = "url('./dino-run-1.png')"
+      //dino.style.backgroundImage = "url('[insert image]')"
     }
-    document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+    document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 25);
   }
 }, 10);

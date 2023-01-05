@@ -1,6 +1,7 @@
 *{
   padding: 0;
   margin: 0;
+  font-family: Arial;
 }
 
 /*
@@ -14,14 +15,14 @@
 }
 
 /*
-"#character" creates the character (red block) to a particular size and color
+"#dino" creates the dinosaur
 */
 
-#character{
+#dino{
   width: 50px;
   height: 50px;
   /* Below, the dinosaur image is given to character */
-  background-image: url("./dino-run-0.png");
+  background-image: url("imgs/dino-run-0.png");
   background-size: cover;
   position: relative;
   top: 150px;
@@ -37,25 +38,19 @@
 }
 
 /*
-"#block" creates the block (blue block) to a particular size and color
-
 "@keyframes" and "animation" work together to create the movement of the block
 */
-#block{
+
+#cactus{
   width: 20px;
   height: 40px;
-  background-image: url("cactus.png");
-  background-size: cover;
+  background-color: blue;
   position: relative;
   top: 110px;
   left: 480px;
-  animation: block 1s infinite linear;
+  animation: cactus 1s infinite linear;
 }
 
-@keyframes block{
-  0%{left: 480px;}
-  100%{left: -40px;}
-}
-p{
-  font-family: Arial;
+@keyframes cactus{
+  /* Insert animation here! */
 }
